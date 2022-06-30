@@ -1,0 +1,27 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:6523/superbank?createDatabaseIfNotExist=true #change to postgres/localhost
+    username: test
+    password: test
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    continue-on-error: false
+  jpa:
+    show-sql: true
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    #    open-in-view: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+
+springdoc:
+  swagger-ui:
+    path: /swagger
+
+accounts:
+  bank: superbank
